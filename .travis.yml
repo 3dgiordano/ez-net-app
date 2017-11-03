@@ -44,6 +44,7 @@ matrix:
         #&& ./gradlew assembleRelease
       after_success:
           - npm install webdriverio
+          - npm install wdio-mocha-framework
           - npm install wdio-sauce-service --save-dev
           - ./node_modules/.bin/wdio wdio.conf.js
           #- curl -sL http://monkop.com/cli -o monkop-cli.py
