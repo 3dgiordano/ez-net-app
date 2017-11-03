@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "7.1"
 sudo: false
-before_install:
+install:
   - pip install pyopenssl ndg-httpsclient pyasn1
 cache:
   directories:
