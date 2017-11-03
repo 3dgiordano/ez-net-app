@@ -43,6 +43,7 @@ matrix:
         - cd android && ./gradlew assembleDebug && cd .. 
         #&& ./gradlew assembleRelease
       after_success:
+          - curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY -X POST -H "Content-Type: application/octet-stream" https://saucelabs.com/rest/v1/storage/$SAUCE_USERNAME/ez-net-app_debug.apk?overwrite=true --data-binary @"$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk"
           - npm install webdriverio
           - npm install wdio-junit-reporter
           - npm install wdio-spec-reporter
