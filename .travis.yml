@@ -51,6 +51,9 @@ matrix:
 
       script:
         - cd android && ./gradlew assembleDebug && ./gradlew assembleRelease
+      after_success:
+          - curl http://static.monkop.com/setup/cli/monkop-cli.py -o monkop-cli.py
+          - python monkop-cli.py -k $monkopapikey -a “$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk” 
       #before_deploy:
       #- cp $TRAVIS_BUILD_DIR/debug.keystore $HOME
       #- jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-release-unsigned.apk androiddebugkey -keystore $HOME/debug.keystore -storepass $storepass -keypass $keypass
