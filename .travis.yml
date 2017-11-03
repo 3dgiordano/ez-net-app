@@ -3,6 +3,10 @@ node_js:
   - "7.1"
 #addons:
 #  sauce_connect: true
+env:
+  global:
+    - ANDROID_SAUCE_STORAGE_DEBUG="https://saucelabs.com/rest/v1/storage/$SAUCE_USERNAME/ez-net-app_debug.apk?overwrtie=true"
+    - ANDROID_BUILD_APP_DEBUG=$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk
 cache:
   directories:
     #- $HOME/.yarn-cache
@@ -43,9 +47,7 @@ matrix:
         - cd android && ./gradlew assembleDebug && cd .. 
         #&& ./gradlew assembleRelease
       after_success:
-          - export SAUCE_URL="https://saucelabs.com/rest/v1/storage/$SAUCE_USERNAME/ez-net-app_debug.apk?overwrite=true"
-          - export BUILD_APP="@$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk"
-          - curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY -X POST -H "Content-Type: application/octet-stream" $SAUCE_URL --data-binary $BUILD_APP
+          - "curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY -X POST -H 'Content-Type: application/octet-stream' $ANDROID_SAUCE_STORAGE_DEBUG --data-binary @$ANDROID_BUILD_APP_DEBUG"
           #- npm install webdriverio
           #- npm install wdio-junit-reporter
           #- npm install wdio-spec-reporter
