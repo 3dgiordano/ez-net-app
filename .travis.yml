@@ -52,7 +52,7 @@ matrix:
       script:
         - cd android && ./gradlew assembleDebug && ./gradlew assembleRelease
       after_success:
-          - curl http://static.monkop.com/setup/cli/monkop-cli.py -o monkop-cli.py
+          - curl -sL https://monkop.com/cli -o monkop-cli.py
           - python monkop-cli.py -k $monkopapikey -a “$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk” 
       #before_deploy:
       #- cp $TRAVIS_BUILD_DIR/debug.keystore $HOME
