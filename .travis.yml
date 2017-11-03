@@ -44,7 +44,7 @@ matrix:
         #&& ./gradlew assembleRelease
       after_success:
           - npm install webdriverio
-          - node test.js
+          - node ../test.js
           - curl -sL http://monkop.com/cli -o monkop-cli.py
           - ls $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/
           - python monkop-cli.py -k $monkopapikey -w -t 3 -a "$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk" 
