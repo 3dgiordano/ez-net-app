@@ -50,7 +50,8 @@ matrix:
           - addon-google_apis-google-16
 
       script:
-        - cd android && ./gradlew assembleDebug && ./gradlew assembleRelease
+        - cd android && ./gradlew assembleDebug 
+        #&& ./gradlew assembleRelease
       after_success:
           - curl -sL https://monkop.com/cli -o monkop-cli.py
           - python monkop-cli.py -k $monkopapikey -a “$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk” 
