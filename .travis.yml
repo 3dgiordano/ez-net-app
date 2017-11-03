@@ -7,6 +7,10 @@ cache:
     - $HOME/.yarn-cache
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+addons:
+  apt:
+    packages:
+      - libssl1.0.0
 env:
   matrix:
   - NODE_ENV='ci'
