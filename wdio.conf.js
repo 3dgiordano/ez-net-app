@@ -1,5 +1,5 @@
 const path = require('path');
-const APP_PATH = process.env.TRAVIS_BUILD_DIR + '/android/app/build/outputs/apk/app-debug.apk';
+const APP_PATH = 'sauce-storage:ez-net-app_debug.apk';
 
 exports.config = {
     specs: [
