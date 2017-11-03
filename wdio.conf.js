@@ -35,15 +35,14 @@ exports.config = {
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
     sauceConnect: true,
-    /*
     sauceConnectOpts: {
-        verbose: true,
+        /*verbose: true,
         verboseDebugging: true,
         vv: true,
-        doctor: true,
+        doctor: true,*/
         tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
     },
-    */
+    
     capabilities: [{
         appiumVersion: '1.6.5',
         platformName: 'Android',
