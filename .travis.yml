@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "7.1"
 sudo: false
-install:
+before_script:
   - export PATH=$HOME/.local/bin:$PATH
   - pip install pyopenssl ndg-httpsclient pyasn1 --user `whoami`
 cache:
