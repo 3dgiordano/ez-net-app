@@ -3,7 +3,7 @@ node_js:
   - "7.1"
 sudo: false
 before_install:
-  - echo -n | openssl s_client -connect api.monkop.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crtenv:
+  - pip install pyopenssl ndg-httpsclient pyasn1
 cache:
   directories:
     - $HOME/.yarn-cache
