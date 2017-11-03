@@ -1,19 +1,19 @@
 language: node_js
-env:
-    - NODE_ENV='ci'
+#env:
+#    - NODE_ENV='ci'
 node_js:
   - "7.1"
 sudo: required
-cache:
-  directories:
-    - $HOME/.yarn-cache
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-    - $HOME/.npm
-    - $HOME/.android/build-cache
-  #global:
-  #- secure: lC+SUm2cVW+6E6utt45i5NDe+zrrjbNtB+F4qFLOm8edTLl/ZMRas6atRCcrSBUQdGIfFsH/cN7+HHI2qwz/1nQtX4Oe/K4glVBj8zb87C1W5/l0kDk1QWlCubm2++CCjqGG+G9iOsMaXNxxeeo4M1GhCOTFCOLud2kzhNWY1Y1e+WbAESJpYrAtxo1gB1SmDhHzhnsHL+27JeQ1DVakNLRfO8FIaaFwjoq6W3zRGM80M3xGpqSyoHNp5DWWKJzqyAIsdmQmm9ik55Lx5+eFq4iV+gvniY15cWFzb7+tskFli7CsMmH04glKxlQJV5it5vHDNoB5f6wSDRb3T+7knxaVcjIltWZd3zF3TBkndym2pavb4c+kH3lYznM7ExsDQtULeU0c4GeDiZKARUhqBq2ZHi1t4IyvHYsOcjSG00UGFxBzTfTtCpmTfZypnXbHbuS5oDq1aKlOuL2UA5hS1S77BHaB1nTOVRmxPscqoix9KLhPOQdJWMEQwONz5lJUinTELLO7mwqnph4mO9hhix3NalXFGxScBvi7aP0zdD/H2q+bzliEzLXZd/BuoVmqcSU2dgYeocLYxFy4mBzypnfQE/FXWIpUBOL+vWdX9uCeCYUgB/1Dtxgp4pFPPG/suMBkbU2WZUBkAwX5m3LIc1jM+d8mROxAlzbr3TTDx24=
-  #- secure: fEXjYYuNUHO4+cX/rpRnE39LLfSbIpIepgMmvRiJWDS/0O16vYl4SBvj8h/pShnmRlVX5yhyd4XAS0yZODReq0AjZetupsfmnUXDRhVTe0CbYnR/CVBUTiO2rUcuFxSAuaqgoE1x6wNT8pwvcp+G5dh1RKSl/Z8pdLggg6slVvRRo9LV9ddiZvJKwBh3R8mPltI/9HQHD8ym2UESN7hUcB/oMDd84pnGU5/ce4UHzeMaqd+jL0GUH+ab8kiTe+GbrKXouT0RyiBVGgJAjtDruaDr7wBpAJ+5yqo5qsO5atansLECPE6NVHpFjtLEx0JA96VLh7Kp0wHV9JNJmlrsi+wHSwXrfD5nnQdtSwiWcTXL7+k8txRblUTnFTsHMhJzI6dB67k5wniw/MbVvYgIfrPnOgIFeooe1hQco+Mmo6Rtuz5ihWDFbp2ATZXRYMl6iDHrU9ncXnrt+eU7ct+BCtlEtBAHOZ7831tu4+BvYdkeGfHA1gCSmmJJkdhWdRMbxslLDJ2OdTnL3F2+ehb5mnqMo3q160OkpCnrsO9yMfrEYkfqImTby+4Zt1wS4lQxd6bP7V+osZ1pVUXdDwTXPMMeZvS/Z3Z1NUyR6TPJ6bYJ5IcMdtOpVFKejey9yXnn5vpvg2poc0fFm86c1GWFkMLSC2tI/+Lzvgf5c6YuYBI=
+#cache:
+#  directories:
+#    - $HOME/.yarn-cache
+#    - $HOME/.gradle/caches/
+#    - $HOME/.gradle/wrapper/
+#    - $HOME/.npm
+#    - $HOME/.android/build-cache
+#  #global:
+#  #- secure: lC+SUm2cVW+6E6utt45i5NDe+zrrjbNtB+F4qFLOm8edTLl/ZMRas6atRCcrSBUQdGIfFsH/cN7+HHI2qwz/1nQtX4Oe/K4glVBj8zb87C1W5/l0kDk1QWlCubm2++CCjqGG+G9iOsMaXNxxeeo4M1GhCOTFCOLud2kzhNWY1Y1e+WbAESJpYrAtxo1gB1SmDhHzhnsHL+27JeQ1DVakNLRfO8FIaaFwjoq6W3zRGM80M3xGpqSyoHNp5DWWKJzqyAIsdmQmm9ik55Lx5+eFq4iV+gvniY15cWFzb7+tskFli7CsMmH04glKxlQJV5it5vHDNoB5f6wSDRb3T+7knxaVcjIltWZd3zF3TBkndym2pavb4c+kH3lYznM7ExsDQtULeU0c4GeDiZKARUhqBq2ZHi1t4IyvHYsOcjSG00UGFxBzTfTtCpmTfZypnXbHbuS5oDq1aKlOuL2UA5hS1S77BHaB1nTOVRmxPscqoix9KLhPOQdJWMEQwONz5lJUinTELLO7mwqnph4mO9hhix3NalXFGxScBvi7aP0zdD/H2q+bzliEzLXZd/BuoVmqcSU2dgYeocLYxFy4mBzypnfQE/FXWIpUBOL+vWdX9uCeCYUgB/1Dtxgp4pFPPG/suMBkbU2WZUBkAwX5m3LIc1jM+d8mROxAlzbr3TTDx24=
+#  #- secure: fEXjYYuNUHO4+cX/rpRnE39LLfSbIpIepgMmvRiJWDS/0O16vYl4SBvj8h/pShnmRlVX5yhyd4XAS0yZODReq0AjZetupsfmnUXDRhVTe0CbYnR/CVBUTiO2rUcuFxSAuaqgoE1x6wNT8pwvcp+G5dh1RKSl/Z8pdLggg6slVvRRo9LV9ddiZvJKwBh3R8mPltI/9HQHD8ym2UESN7hUcB/oMDd84pnGU5/ce4UHzeMaqd+jL0GUH+ab8kiTe+GbrKXouT0RyiBVGgJAjtDruaDr7wBpAJ+5yqo5qsO5atansLECPE6NVHpFjtLEx0JA96VLh7Kp0wHV9JNJmlrsi+wHSwXrfD5nnQdtSwiWcTXL7+k8txRblUTnFTsHMhJzI6dB67k5wniw/MbVvYgIfrPnOgIFeooe1hQco+Mmo6Rtuz5ihWDFbp2ATZXRYMl6iDHrU9ncXnrt+eU7ct+BCtlEtBAHOZ7831tu4+BvYdkeGfHA1gCSmmJJkdhWdRMbxslLDJ2OdTnL3F2+ehb5mnqMo3q160OkpCnrsO9yMfrEYkfqImTby+4Zt1wS4lQxd6bP7V+osZ1pVUXdDwTXPMMeZvS/Z3Z1NUyR6TPJ6bYJ5IcMdtOpVFKejey9yXnn5vpvg2poc0fFm86c1GWFkMLSC2tI/+Lzvgf5c6YuYBI=
 script:
   - nvm install v7.1
   - node --version
