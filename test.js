@@ -9,5 +9,8 @@ var options = {
 webdriverio
     .remote(options)
     .init()
-    .end();
+    .pause(2000)
+    .end().catch(function (e) {
+        console.error(e.stack);
+    });
     
