@@ -15,5 +15,9 @@ exports.config = {
         vv: true,
         doctor: true,
         tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
-    }
+    },
+    capabilities: [{
+        
+    }],
+
 };
