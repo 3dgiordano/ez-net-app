@@ -33,7 +33,7 @@ matrix:
         - nvm install v7.1
         - node --version
         - npm i react-native-cli -g
-        - npm install && react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/debug        
+        - rm -rf node_modules && npm install && react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/debug        
         #- nvm install 7
         #- node --version
         #- travis_retry curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
