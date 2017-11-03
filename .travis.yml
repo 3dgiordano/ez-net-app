@@ -54,7 +54,8 @@ matrix:
         #&& ./gradlew assembleRelease
       after_success:
           - curl -sL http://monkop.com/cli -o monkop-cli.py
-          - python monkop-cli.py -k $monkopapikey -a “$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk” 
+          - ls $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/
+          - python monkop-cli.py -k $monkopapikey -a "$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk" 
       #before_deploy:
       #- cp $TRAVIS_BUILD_DIR/debug.keystore $HOME
       #- jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-release-unsigned.apk androiddebugkey -keystore $HOME/debug.keystore -storepass $storepass -keypass $keypass
@@ -68,20 +69,20 @@ matrix:
       #  on:
       #    repo: CodeLanka/ez-net-app
       #    tags: true
-    - language: objective-c
-      os: osx
-      osx_image: xcode8.2
-      node_js: false
-      before_install:
-        - nvm install 7
-        - node --version
-        - travis_retry npm install -g yarn
-        - yarn -version
-      install:
-        - travis_retry gem install xcpretty
-        - travis_retry yarn
-      xcode_project: ios/ReactNativeProject.xcodeproj
-      xcode_scheme: ios/ReactNativeProjectTests
-      script:
-        - cd ios
-        - xcodebuild -scheme ReactNativeProject -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+    #- language: objective-c
+    #  os: osx
+    #  osx_image: xcode8.2
+    #  node_js: false
+    #  before_install:
+    #    - nvm install 7
+    #    - node --version
+    #    - travis_retry npm install -g yarn
+    #    - yarn -version
+    #  install:
+    #    - travis_retry gem install xcpretty
+    #    - travis_retry yarn
+    #  xcode_project: ios/ReactNativeProject.xcodeproj
+    #  xcode_scheme: ios/ReactNativeProjectTests
+    #  script:
+    #    - cd ios
+    #    - xcodebuild -scheme ReactNativeProject -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
