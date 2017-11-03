@@ -30,6 +30,8 @@ matrix:
       sudo: required
       node_js: false
       before_install:
+        - nvm install v7.1
+        - node --version
         - npm t
         - npm i react-native-cli -g
         - react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/debug        
