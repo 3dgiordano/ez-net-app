@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "7.1"
+addons:
+  sauce_connect: true
 cache:
   directories:
     #- $HOME/.yarn-cache
@@ -29,6 +31,8 @@ matrix:
           #- extra-google-google_play_services
           #- extra-google-m2repository
           #- addon-google_apis-google-16
+        licenses:
+          - '.+'
       script:
         - nvm install v7.1
         - node --version
