@@ -3,7 +3,7 @@ node_js:
   - "7.1"
 cache:
   directories:
-    - $HOME/.yarn-cache
+    #- $HOME/.yarn-cache
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.npm
