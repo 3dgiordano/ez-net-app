@@ -40,12 +40,12 @@ matrix:
         - npm i react-native-cli -g
         #- npm i npm react-native-easy-grid -g
         - npm install && react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/debug        
-        - cd android && ./gradlew assembleDebug 
+        - cd android && ./gradlew assembleDebug && cd .. 
         #&& ./gradlew assembleRelease
       after_success:
           - npm install webdriverio
           - npm install wdio-sauce-service --save-dev
-          - node ../test.js
+          - ./node_modules/.bin/wdio wdio.conf.js
           #- curl -sL http://monkop.com/cli -o monkop-cli.py
           #- ls $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/
           #- python monkop-cli.py -k $monkopapikey -w -t 3 -a "$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk" 
