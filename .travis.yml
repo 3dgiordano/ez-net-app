@@ -4,7 +4,7 @@ node_js:
 sudo: false
 before_script:
   - export PATH=$HOME/.local/bin:$PATH
-  - pip install pyopenssl ndg-httpsclient pyasn1 --user `whoami`
+  - pip install pyopenssl ndg-httpsclient pyasn1
 cache:
   directories:
     - $HOME/.yarn-cache
