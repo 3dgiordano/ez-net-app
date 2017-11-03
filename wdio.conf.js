@@ -1,4 +1,5 @@
 const path = require('path');
+const APP_PATH = process.env.TRAVIS_BUILD_DIR + '/android/app/build/outputs/apk/app-debug.apk';
 
 exports.config = {
     specs: [
@@ -10,9 +11,9 @@ exports.config = {
     sync: true,
     coloredLogs: true,
     logLevel: 'verbose',
-    baseUrl: 'http://localhost:3000',
-    waitforTimeout: 10000,
-    connectionRetryTimeout: 300000,
+    baseUrl: 'http://localhost',
+    waitforTimeout: 9999999,
+    connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     framework: 'mocha',
     reporters: [
@@ -20,10 +21,15 @@ exports.config = {
       'spec'
     ],
     reporterOptions: {
-      outputDir: './artifacts/test'
+        junit: {
+            outputDir: 'report.xml'
+        }
     },
+    screenshotPath: './errorShots/',
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        fullTrace: true,
+        timeout: 99999999
     },
     services: ['sauce'],
     user: process.env.SAUCE_USERNAME,
@@ -36,6 +42,14 @@ exports.config = {
         doctor: true,
         tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
     },
-    capabilities: [
-    ]
+    capabilities: [{
+        appiumVersion: '1.6.5',
+        platformName: 'Android',
+        platformVersion: '6.0',
+        deviceName: 'Android Emulator',
+        app: APP_PATH,
+        browserName: '',
+        deviceOrientation: 'portrait',
+        //clearSystemFiles: false
+    }]
 };
