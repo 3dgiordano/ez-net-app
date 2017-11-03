@@ -1,3 +1,5 @@
+const path = require('path');
+
 exports.config = {
     specs: [
         path.join(__dirname, './test.js')
