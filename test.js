@@ -1,6 +1,8 @@
 var webdriverio = require('webdriverio');
 var options = {
-    desiredCapabilities: {}
+    desiredCapabilities: {
+        tags:["one","two","3"]       
+}
 };
 webdriverio
     .remote(options)
