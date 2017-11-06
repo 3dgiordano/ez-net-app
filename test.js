@@ -1,5 +1,7 @@
 var webdriverio = require('webdriverio');
-var options = {};
+var options = {
+    desiredCapabilities: {name:"my super test"}
+};
 webdriverio
     .remote(options)
     .init()
