@@ -44,6 +44,9 @@ exports.config = {
     },
     
     capabilities: [{
+        name:"my super test X",
+        tags:["one","two","3"],
+        'custom-data':{release:"3dgiordano"},
         build:process.env.TRAVIS_JOB_NUMBER,
         appiumVersion: '1.6.5',
         platformName: 'Android',
