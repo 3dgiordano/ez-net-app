@@ -1,7 +1,7 @@
 var webdriverio = require('webdriverio');
 var options = {
     desiredCapabilities: {
-        tags:["one","two","3"]       
+        
 }
 };
 webdriverio
