@@ -44,6 +44,7 @@ exports.config = {
     },
     
     capabilities: [{
+        name:"my super test",
         build:process.env.TRAVIS_JOB_NUMBER,
         appiumVersion: '1.6.5',
         platformName: 'Android',
